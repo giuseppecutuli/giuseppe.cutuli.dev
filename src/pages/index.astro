@@ -8,27 +8,27 @@ const technologies = [
         items: [
             {
                 name: 'Javascript',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg'
+                icon: 'devicon-javascript-plain'
             },
             {
                 name: 'Typescript',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg'
+                icon: 'devicon-typescript-plain'
             },
             {
                 name: 'PHP',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg'
+                icon: 'devicon-php-plain'
             },
             {
                 name: 'Python',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg'
+                icon: 'devicon-python-plain'
             },
             {
                 name: 'Java',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg'
+                icon: 'devicon-java-plain'
             },
             {
                 name: 'C++',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-plain.svg'
+                icon: 'devicon-cplusplus-plain'
             }
         ]
     },
@@ -37,31 +37,31 @@ const technologies = [
         items: [
             {
                 name: 'React',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+                icon: 'devicon-react-original'
             },
             {
                 name: 'VueJS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
+                icon: 'devicon-vuejs-plain'
             },
             {
                 name: 'NuxtJS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg'
+                icon: 'devicon-nuxtjs-plain'
             },
             {
                 name: 'NextJS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg'
+                icon: 'devicon-nextjs-plain'
             },
             {
                 name: 'HTML',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg'
+                icon: 'devicon-html5-plain'
             },
             {
                 name: 'CSS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg'
+                icon: 'devicon-css3-plain'
             },
             {
                 name: 'TailwindCSS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+                icon: 'devicon-tailwindcss-plain'
             }
         ]
     },
@@ -70,15 +70,15 @@ const technologies = [
         items: [
             {
                 name: 'NodeJS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg'
+                icon: 'devicon-nodejs-plain'
             },
             {
                 name: 'NestJS',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg'
+                icon: 'devicon-nestjs-plain'
             },
             {
                 name: 'Laravel',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain-wordmark.svg'
+                icon: 'devicon-laravel-plain'
             }
         ]
     },
@@ -87,19 +87,19 @@ const technologies = [
         items: [
             {
                 name: 'MongoDB',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg'
+                icon: 'devicon-mongodb-plain'
             },
             {
                 name: 'Postgresql',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg'
+                icon: 'devicon-postgresql-plain'
             },
             {
                 name: 'MySQL',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg'
+                icon: 'devicon-mysql-plain'
             },
             {
                 name: 'SQLite',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg'
+                icon: 'devicon-sqlite-plain'
             }
         ]
     },
@@ -108,19 +108,19 @@ const technologies = [
         items: [
             {
                 name: 'Firebase',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg'
+                icon: 'devicon-firebase-plain'
             },
             {
                 name: 'GraphQL',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg'
+                icon: 'devicon-graphql-plain'
             },
             {
                 name: 'Jamstack',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jamstack/jamstack-original-wordmark.svg'
+                icon: 'devicon-jamstack-original'
             },
             {
                 name: 'Git',
-                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg'
+                icon: 'devicon-git-plain'
             }
         ]
     },
@@ -156,7 +156,7 @@ const pageTitle = "Giuseppe Cutuli";
                 <ul>
                     {tech.items.map(item => (
                         <li>
-                            <img src={item.icon} alt={item.name} title={item.name} width="60" height="60" />
+                            <i class={`tech-icon ${item.icon}`}></i>
                         </li>
                     ))}
                 </ul>
@@ -190,10 +190,13 @@ const pageTitle = "Giuseppe Cutuli";
         padding: 0;
     }
 
+    .technologies i {
+        font-size: 4rem;
+    }
+
     @media only screen and (max-width: 600px) {
-        .technologies img {
-            height: 50px;
-            width: 50px;
-        }
+        .technologies i {
+        font-size: 3rem;
+    }
     }
 </style>

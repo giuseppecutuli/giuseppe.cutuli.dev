@@ -10,9 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.6.3",
+    "astro": "^4.0.8",
     "astro-integration-lottie": "git+https://github.com/giuseppecutuli/astro-lottie",
+    "devicon": "^2.15.1",
     "lottie-web": "^5.12.2",
     "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }

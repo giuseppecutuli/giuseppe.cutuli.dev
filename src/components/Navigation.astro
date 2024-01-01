@@ -1,44 +1,50 @@
 ---
-import ThemeIcon from './ThemeIcon.astro';
+import ThemeToggle from './ThemeToggle.astro';
 ---
-<div class="nav-bar">
-    <div class="title-link">
-        <a href="/">Giuseppe Cutuli</a>
-    </div>
+<nav class="nav-bar">
+    <a href="/" class="title-link">Giuseppe Cutuli</a>
     <div class="nav-links">
         <a href="/works/">Works</a>
         <a href="/posts/">Posts</a>
         <a href="https://github.com/giuseppecutuli" target="_blank">GitHub</a>
-        <ThemeIcon />
+        <ThemeToggle />
     </div>
-</div>
+</nav>
 
 <style>
 .nav-bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 0.8rem;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-.title-link, .nav-links {
+.title-link {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     font-size: 1.3rem;
 }
 
+.title-link::before {
+    display: none;
+}
+
 .nav-links {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.1rem;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
 }
 
 .nav-links a {
-    margin: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .nav-bar {
-        display: initial;
+        grid-template-columns: 1fr;
     }
 
     .title-link {
@@ -46,11 +52,7 @@ import ThemeIcon from './ThemeIcon.astro';
     }
 
     .nav-links {
-        text-align: center;
-    }
-
-    .nav-links a {
-        margin: 0 11px;
+        justify-content: center;
     }
 }
 </style>

@@ -26,13 +26,13 @@
 
 :root {
     --grey: #fefefe;
-    --dark: #1e1e2e;
+    --black: #1e1e2e;
     --blue30: #375a7f;
 }
 
 html {
     --primary: var(--grey);
-    --secondary: var(--dark);
+    --secondary: var(--black);
 
     background-color: var(--secondary);
     color: var(--primary);
@@ -40,13 +40,13 @@ html {
 }
 
 html.light {
-    --primary: var(--dark);
+    --primary: var(--black);
     --secondary: var(--grey);
 }
 
 body {
     font-family: 'Josefin Sans', sans-serif;
-    padding: 1rem;
+    padding-inline: 1rem;
     min-height: 100dvh;
     margin: 0 auto;
     text-align: justify;
@@ -82,7 +82,6 @@ p {
 
 a {
     position: relative;
-    padding: 2px 0;
     color: var(--primary);
     text-decoration: none;
 }
