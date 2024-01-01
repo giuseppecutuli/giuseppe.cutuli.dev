@@ -1,8 +1,8 @@
 # 🌋 Giuseppe Cutuli
-This is my personal portfolio. After a year, I finally decided to create it, and I'm very happy with the result. It is very simple, but I think it's okay for now.
+This is my personal portfolio. After a year, I finally decided to create it, and I'm very happy with the result. It is very simple, I think it's okay for now.
 
 
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build) [![Netlify Status](https://api.netlify.com/api/v1/badges/0b0bcb79-a1d8-4b32-9566-8f30af19e4cc/deploy-status)](https://app.netlify.com/sites/astro-milky-way/deploys)
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build) [![Netlify Status](https://api.netlify.com/api/v1/badges/7996973f-c4fc-4c98-b798-5b730af5a610/deploy-status)](https://app.netlify.com/sites/giuseppe-cutuli/deploys)
 
 
 ## 📂 Project Structure
