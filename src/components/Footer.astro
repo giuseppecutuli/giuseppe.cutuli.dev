@@ -1,80 +1,62 @@
 ---
 const year = new Date().getFullYear();
+const socials = [
+    {
+        name: "GitHub",
+        icon: "devicon-github-original",
+        link: "#",
+    },
+    // {
+    //     name: "Email",
+    //     icon: "/mail.svg",
+    //     link: "#",
+    // },
+    {
+        name: "LinkedIn",
+        icon: "devicon-linkedin-plain",
+        link: "#",
+    },
+];
 ---
 <footer>
-    <div>
-        <div>
-            <ul class="icons">
-                <li><a href="#" target="_blank" class="foot-btn"><span class="git-icon">GitHub</span></a></li>
-                <li><a href="mailto: #@gmail.com" class="foot-btn"><span class="mail-icon">Email</span></a></li>
-                <li><a href="#" target="_blank" class="foot-btn"><span class="linked-in">LinkedIn</span></a></li>
-            </ul>
-        </div>
-        <small>&copy; {year} Giuseppe Cutuli. All Rights Reserved.</small>
-    </div>
+    <ul class="socials">
+        {socials.map((social) => (
+            <li>
+                <a href={social.link} target="_blank" class="social">
+                    <i class={social.icon}></i>
+                </a>
+            </li>
+        ))}
+    </ul>
+    <small>&copy; {year} Giuseppe Cutuli. All Rights Reserved.</small>
 </footer>
 <style>
     footer {
         margin: 4rem 0;
-    }
-
-    ul.icons {
-        cursor: default;
-        list-style: none;
-        padding: 0;
-    }
-
-    ul.icons li {
-        display: inline-block;
-        padding: 0 0.5rem;
-    }
-
-    div {
         text-align: center;
     }
 
-    small a {
-        color: var(--blue30);
+    .socials {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
     }
 
-    .foot-btn {
+    .social {
         display: flex;
-        padding: 10px;
-        height: 20px;
-        width: 20px;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
         border-radius: 50%;
         border: 2px solid var(--primary);
     }
 
-    .foot-btn:hover {
-        border-color: #78c2ad;
-    }
-
-    .git-icon {
-        content: url("/github-mark-white.svg");
-    }
-
-    .mail-icon {
-        content: url("/mail-white.svg");
-    }
-
-    .linked-in {
-        content: url("/li-in-white.png");
-    }
-
-    .light .foot-btn:hover {
-        border-color: #78c2ad;
-    }
-
-    .light .git-icon {
-        content: url("/github-mark.svg");
-    }
-
-    .light .mail-icon {
-        content: url("/mail.svg");
-    }
-
-    .light .linked-in {
-        content: url("/li-in.png");
+    .social::before {
+        display: none;
     }
 </style>

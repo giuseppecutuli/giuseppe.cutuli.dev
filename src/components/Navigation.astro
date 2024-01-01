@@ -1,12 +1,29 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+
+const items = [
+    // {
+    //     label: 'Works',
+    //     url: '/works/',
+    // },
+    // {
+    //     label: 'Posts',
+    //     url: '/posts/',
+    // },
+    {
+        label: 'GitHub',
+        url: 'https://github.com/giuseppecutuli',
+        target: '_blank',
+    },
+]
+
 ---
 <nav class="nav-bar">
     <a href="/" class="title-link">Giuseppe Cutuli</a>
     <div class="nav-links">
-        <a href="/works/">Works</a>
-        <a href="/posts/">Posts</a>
-        <a href="https://github.com/giuseppecutuli" target="_blank">GitHub</a>
+        {items.map(item => (
+            <a href={item.url} target={item.target}>{item.label}</a>
+        ))}
         <ThemeToggle />
     </div>
 </nav>
@@ -14,7 +31,7 @@ import ThemeToggle from './ThemeToggle.astro';
 <style>
 .nav-bar {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     gap: 0.5rem;
     align-items: center;
 }
@@ -42,6 +59,8 @@ import ThemeToggle from './ThemeToggle.astro';
     margin-top: 0.3rem;
 }
 
+/** CSS WHEN ENABLE OTHER LINKS */
+/*
 @media only screen and (max-width: 480px) {
     .nav-bar {
         grid-template-columns: 1fr;
@@ -55,4 +74,5 @@ import ThemeToggle from './ThemeToggle.astro';
         justify-content: center;
     }
 }
+*/
 </style>
