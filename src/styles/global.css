@@ -1,111 +1,110 @@
 /* Global styles */
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/fonts/josefin/JosefinSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/fonts/josefin/JosefinSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('/fonts/josefin/JosefinSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('/fonts/rubik/Rubik-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+:root {
+    --grey: #fefefe;
+    --dark: #1e1e2e;
+    --blue30: #375a7f;
+}
+
 html {
-    background-color: #1e1e2e;
-    color: #fdebf3;
+    --primary: var(--grey);
+    --secondary: var(--dark);
+
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-size: 16px;
+}
+
+html.light {
+    --primary: var(--dark);
+    --secondary: var(--grey);
 }
 
 body {
-    max-width: 540px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 1rem;
+    min-height: 100dvh;
     margin: 0 auto;
     text-align: justify;
 }
 
+@media only screen and (min-width: 600px) {
+    body {
+        max-width: 600px;
+    }
+}
+
 /* Headings */
-h1, h2 {
-    font-family: 'Pacifico', cursive;
-    font-weight: normal;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 }
 
 h1 {
     font-size: 2.6em;
-    margin: 0;
 }
 
 h2 {
-    text-decoration: underline #375a7f;
-    text-decoration-thickness: 4px;
-    text-underline-offset: 6px;
+    text-decoration: underline var(--blue30);
     font-size: 2.1em;
-    margin-bottom: 0;
 }
 
-/* Paragraphs */
 p {
-    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.1em;
     hyphens: auto;
     line-height: 1.5;
     text-indent: 1em;
 }
 
-
-/* Gifs */
-.gif {
-    margin: 20px 0 0 0;
-    text-align: center;
-}
-
-/* Navigation Bar */
-.nav-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 0.8rem;
-}
-
-.title-link, .nav-links {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.3rem;
-}
-
-.title-link a, .nav-links a {
-    color: #fdebf3;
+a {
+    position: relative;
+    padding: 2px 0;
+    color: var(--primary);
     text-decoration: none;
 }
 
-.title-link a:hover, .nav-links a:hover, a:focus {
-    text-decoration: underline #375a7f;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
+a:before {
+    content: '';
+    background: var(--primary);
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.3s ease-in-out;
 }
 
-.nav-links {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.1rem;
-    text-align: right;
+a:hover {
+    text-decoration: none;
 }
-
-.nav-links a {
-    margin: 0 10px;
-}
-
-/* Footer */
-.foot-btn {
-    display: flex;
-    padding: 10px;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 2px solid #fdebf3;
-}
-
-.foot-btn:hover {
-    border-color: #78c2ad;
-}
-
-.light .foot-btn {
-    border: 2px solid #1e1e2e;
-}
-
-.git-icon {
-    content: url("/github-mark-white.svg");
-}
-
-.mail-icon {
-    content: url("/mail-white.svg");
-}
-
-.linked-in {
-    content: url("/li-in-white.png");
+  
+a:hover::before {
+    width: 100%;
 }
 
 /* Card listing */
@@ -114,77 +113,4 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
-}
-
-/* Theme Icon */
-html.light {
-    background-color: #fdebf3;
-    color: #1e1e2e;
-}
-
-.light .title-link a {
-    color: #1e1e2e;
-}
-
-.light .card-title {
-    color: #1e1e2e; 
-}
-
-.light .card-txt {
-    color: #1e1e2e; 
-}
-
-.light .nav-links a {
-    color: #1e1e2e;
-}
-
-.light .link-card > a {
-    color: #1e1e2e; 
-}
-
-.light .button {
-    color: #1e1e2e;
-}
-
-.light .button:hover {
-    color: #fdebf3;
-}
-
-.light .foot-btn:hover {
-	border-color: #78c2ad;
-}
-
-.light .git-icon {
-    content: url("/github-mark.svg");
-}
-
-.light .mail-icon {
-    content: url("/mail.svg");
-}
-
-.light .linked-in {
-    content: url("/li-in.png");
-}
-
-/* Media Query */
-@media only screen and (max-width: 600px) {
-    body {
-        width: 320px;
-    }
-
-    .nav-bar {
-        display: initial;
-    }
-
-    .title-link {
-        text-align: center;
-    }
-
-    .nav-links {
-        text-align: center;
-    }
-
-    .nav-links a {
-        margin: 0 11px;
-    }
 }

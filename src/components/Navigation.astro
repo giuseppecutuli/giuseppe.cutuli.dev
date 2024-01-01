@@ -3,12 +3,54 @@ import ThemeIcon from './ThemeIcon.astro';
 ---
 <div class="nav-bar">
     <div class="title-link">
-        <a href="/">Milky-Way</a>
+        <a href="/">Giuseppe Cutuli</a>
     </div>
     <div class="nav-links">
         <a href="/works/">Works</a>
         <a href="/posts/">Posts</a>
-        <a href="https://github.com/ttomczak3/Milky-Way" target="_blank">GitHub</a>
+        <a href="https://github.com/giuseppecutuli" target="_blank">GitHub</a>
         <ThemeIcon />
     </div>
 </div>
+
+<style>
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0.8rem;
+}
+
+.title-link, .nav-links {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.nav-links {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.nav-links a {
+    margin: 0 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-bar {
+        display: initial;
+    }
+
+    .title-link {
+        text-align: center;
+    }
+
+    .nav-links {
+        text-align: center;
+    }
+
+    .nav-links a {
+        margin: 0 11px;
+    }
+}
+</style>

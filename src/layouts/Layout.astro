@@ -1,10 +1,47 @@
 ---
+import 'normalize.css';
+import '../styles/global.css';
+
 import { ViewTransitions } from 'astro:transitions';
 import { fade } from 'astro:transitions';
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-const { pageTitle } = Astro.props;
+
+interface Props {
+    hideHeader?: boolean;
+    hideFooter?: boolean;
+    pageTitle?: string;
+}
+
+const fontsPreloaad = [
+    {
+        href: '/fonts/josefin/JosefinSans-Regular.ttf',
+        as: 'font',
+        type: 'font/ttf',
+        crossorigin: true
+    },
+    {
+        href: '/fonts/josefin/JosefinSans-Medium.ttf',
+        as: 'font',
+        type: 'font/ttf',
+        crossorigin: true
+    },
+    {
+        href: '/fonts/josefin/JosefinSans-SemiBold.ttf',
+        as: 'font',
+        type: 'font/ttf',
+        crossorigin: true
+    },
+    {
+        href: '/fonts/rubik/Rubik-Medium.ttf',
+        as: 'font',
+        type: 'font/ttf',
+        crossorigin: true
+    },
+]
+
+const { pageTitle, hideFooter = false, hideHeader = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html transition:animate="none" lang="en">
@@ -13,20 +50,17 @@ const { pageTitle } = Astro.props;
         <meta name="description" content="Astro description">
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap" rel="stylesheet"></noscript>        
+        {fontsPreloaad.map(font => <link rel="preload" {...font} />)}
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
         <ViewTransitions />
 	</head>
 	<body>
-        <Header />
+        {!hideHeader && <Header />}
         <main transition:animate={fade({ duration: '0.4s' })} >
-	    <slot />
-            <Footer />
+            <slot />
         </main>
+        {!hideFooter && <Footer />}
         <script>
             function colorMode() {
                 if (

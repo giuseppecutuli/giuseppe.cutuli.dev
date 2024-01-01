@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
                 <li><a href="#" target="_blank" class="foot-btn"><span class="linked-in">LinkedIn</span></a></li>
             </ul>
         </div>
-        <small>&copy; {year} Milky-Way by <a href="https://github.com/ttomczak3">ttomczak</a>. All Rights Reserved.</small>
+        <small>&copy; {year} Giuseppe Cutuli. All Rights Reserved.</small>
     </div>
 </footer>
 <style>
@@ -33,12 +33,48 @@ const year = new Date().getFullYear();
         text-align: center;
     }
 
-    small {
-        font-family: 'Josefin Sans', sans-serif; 
+    small a {
+        color: var(--blue30);
     }
 
-    small a {
-        color: #375a7f;
-        text-decoration: none;
+    .foot-btn {
+        display: flex;
+        padding: 10px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--primary);
+    }
+
+    .foot-btn:hover {
+        border-color: #78c2ad;
+    }
+
+    .git-icon {
+        content: url("/github-mark-white.svg");
+    }
+
+    .mail-icon {
+        content: url("/mail-white.svg");
+    }
+
+    .linked-in {
+        content: url("/li-in-white.png");
+    }
+
+    .light .foot-btn:hover {
+        border-color: #78c2ad;
+    }
+
+    .light .git-icon {
+        content: url("/github-mark.svg");
+    }
+
+    .light .mail-icon {
+        content: url("/mail.svg");
+    }
+
+    .light .linked-in {
+        content: url("/li-in.png");
     }
 </style>

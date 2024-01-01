@@ -1,13 +1,137 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = "Milky-Way";
+import Lottie from "../components/Lottie.astro";
+
+const technologies = [
+    {
+        section: 'Languages',
+        items: [
+            {
+                name: 'Javascript',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg'
+            },
+            {
+                name: 'Typescript',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg'
+            },
+            {
+                name: 'PHP',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg'
+            },
+            {
+                name: 'Python',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg'
+            },
+            {
+                name: 'Java',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg'
+            },
+            {
+                name: 'C++',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-plain.svg'
+            }
+        ]
+    },
+    {
+        section: 'Frontend',
+        items: [
+            {
+                name: 'React',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+            },
+            {
+                name: 'VueJS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
+            },
+            {
+                name: 'NuxtJS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg'
+            },
+            {
+                name: 'NextJS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg'
+            },
+            {
+                name: 'HTML',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg'
+            },
+            {
+                name: 'CSS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg'
+            },
+            {
+                name: 'TailwindCSS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg'
+            }
+        ]
+    },
+    {
+        section: 'Backend',
+        items: [
+            {
+                name: 'NodeJS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg'
+            },
+            {
+                name: 'NestJS',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg'
+            },
+            {
+                name: 'Laravel',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain-wordmark.svg'
+            }
+        ]
+    },
+    {
+        section: 'Database',
+        items: [
+            {
+                name: 'MongoDB',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg'
+            },
+            {
+                name: 'Postgresql',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg'
+            },
+            {
+                name: 'MySQL',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg'
+            },
+            {
+                name: 'SQLite',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original-wordmark.svg'
+            }
+        ]
+    },
+    {
+        section: 'Other',
+        items: [
+            {
+                name: 'Firebase',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg'
+            },
+            {
+                name: 'GraphQL',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg'
+            },
+            {
+                name: 'Jamstack',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jamstack/jamstack-original-wordmark.svg'
+            },
+            {
+                name: 'Git',
+                icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg'
+            }
+        ]
+    },
+]
+
+const pageTitle = "Giuseppe Cutuli";
 ---
 <Layout pageTitle={pageTitle}>
-    <div class="gif">
-        <img width="300" height="259" alt="RaccoonSpaceGif" src="/space.webp"/>
-    </div>
-    <h1>Milky-Way</h1>
-    <small>Digital Craftsman (Developer)</small>
+    <Lottie src="/lottie/home.json" width="300" height="211" />
+    <h1>Giuseppe Cutuli</h1>
+    <small>Master Coder (Full stack developer)</small>
     <h2>About</h2>
     <p>
         Praesent malesuada mi nisi, quis tempus magna venenatis ut.
@@ -24,22 +148,20 @@ const pageTitle = "Milky-Way";
         facilisis turpis nibh, nec dictum orci dictum nec. In hac habitasse platea dictumst.
         Maecenas mollis turpis vitae turpis bibendum, vitae tristique arcu eleifend.
     </p>
-    <div class="button">
-        <a href="/works/">
-            <button class="button">My portfolio</button>
-        </a>
-    </div>
     <h2>Skills</h2>
-    <div class="link-images">
-        <img width="46" height="46" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg"/>
-        <img width="46" height="46" alt="DotNetCore" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"/>
-        <img width="46" height="46" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"/>
-        <img width="46" height="46" alt="Angular" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg"/>
-        <img width="46" height="46" alt="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg"/>
-        <img width="46" height="46" alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"/>
-        <img width="46" height="46" alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"/>
-        <img width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"/>
-        <img width="46" height="46" alt="PostGres" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg"/>
+    <div class="technologies">
+        {technologies.map(tech => (
+            <div>
+                <h3>{tech.section}</h3>
+                <ul>
+                    {tech.items.map(item => (
+                        <li>
+                            <img src={item.icon} alt={item.name} title={item.name} width="60" height="60" />
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ))}
     </div>
     <h2>Interests</h2>
     <p>
@@ -52,45 +174,26 @@ const pageTitle = "Milky-Way";
 <style>
     /* small */
     small {
-        background-color: #584966;
-        color: #fdebf3;
+        background-color: var(--primary);
+        color: var(--secondary);
         border-radius: 6px;
-        font-family: 'Josefin Sans', sans-serif;
         font-weight: 600;
         padding: 0.3em 0.6em 0.2em;
     }
 
-    /* Button */
-    button {
-        background: rgba(0,0,0,0);
-        border: 2px solid #78c2ad;
-        border-radius: 8px;
-        color: #fdebf3;
-        font: 600 16px 'Josefin Sans', sans-serif;
-        padding: 8px 16px;
-        transition: background-color 0.4s, color 0.4s;
-    }
-
-    button:hover {
-        background-color: #78c2ad;
-        color: #1e1e2e;
-        cursor: pointer;
-    }
-
-    .button {
-        text-align: center;
-    }
-
-    /* Skill images */
-    .link-images img {
-        margin: 16px 4px;
+    .technologies div ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
     }
 
     @media only screen and (max-width: 600px) {
-        .link-images img {
-            height: 30px;
-            width: 30px;
-            margin: 16px 1px;
+        .technologies img {
+            height: 50px;
+            width: 50px;
         }
     }
 </style>

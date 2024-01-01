@@ -1,0 +1,25 @@
+---
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+
+interface Props {
+    width: string;
+    height: string;
+    src: string;
+}
+
+const { width, height, src } = Astro.props;
+
+const style = `width: ${width}px; height: ${height}px;`;
+
+---
+<div class="lottie" style={style}>
+    <LottieAnimation src={src} autoplay={true} />
+</div>
+
+<style>
+    .lottie {
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+</style>

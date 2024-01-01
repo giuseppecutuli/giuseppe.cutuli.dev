@@ -1,12 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Lottie from '../components/Lottie.astro';
 const pageTitle = "Posts";
 ---
 <Layout pageTitle={pageTitle}>
-    <div class="gif">
-        <img width="300" height="259" alt="RaccoonLaptopGif" src="/blog.webp"/>
-    </div>
+    <Lottie src="/lottie/men.json" width="300" height="300" />
     <h2>Blog</h2>
     <ul role="list" class="link-card-grid">
         <Card

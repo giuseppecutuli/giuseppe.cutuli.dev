@@ -1,4 +1,9 @@
 import { defineConfig } from 'astro/config';
+import lottie from "astro-integration-lottie";
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+    integrations: [
+        lottie(),
+    ]
+});
