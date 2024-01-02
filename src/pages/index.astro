@@ -131,7 +131,7 @@ const pageTitle = "Giuseppe Cutuli";
 <Layout pageTitle={pageTitle}>
     <Lottie src="/lottie/home.json" width="300" height="211" />
     <h1>Giuseppe Cutuli</h1>
-    <small>Master Coder (Full stack developer)</small>
+    <small class="role">Full stack developer</small>
     <h2>About</h2>
     <p>
         Praesent malesuada mi nisi, quis tempus magna venenatis ut.
@@ -157,6 +157,7 @@ const pageTitle = "Giuseppe Cutuli";
                     {tech.items.map(item => (
                         <li>
                             <i class={`tech-icon ${item.icon}`}></i>
+                            <small>{item.name}</small>
                         </li>
                     ))}
                 </ul>
@@ -172,8 +173,7 @@ const pageTitle = "Giuseppe Cutuli";
     </p>
 </Layout>
 <style>
-    /* small */
-    small {
+    .role {
         background-color: var(--primary);
         color: var(--secondary);
         border-radius: 6px;
@@ -194,9 +194,9 @@ const pageTitle = "Giuseppe Cutuli";
         font-size: 4rem;
     }
 
-    @media only screen and (max-width: 600px) {
-        .technologies i {
-        font-size: 3rem;
-    }
+    .technologies small {
+        display: block;
+        margin-top: 0.3rem;
+        text-align: center;
     }
 </style>
