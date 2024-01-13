@@ -22,7 +22,7 @@ const socials = [
     <ul class="socials">
         {socials.map((social) => (
             <li>
-                <a href={social.link} target="_blank" class="social">
+                <a href={social.link} target="_blank" class="social" title={social.name}>
                     <i class={social.icon}></i>
                 </a>
             </li>
