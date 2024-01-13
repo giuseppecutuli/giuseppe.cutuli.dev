@@ -65,7 +65,7 @@ const { pageTitle, hideFooter = false, hideHeader = false } = Astro.props;
         <script>
             import { initTheme } from "../utils/theme";
 
-            document.addEventListener('astro:after-swap', initTheme);
+            document.addEventListener('astro:page-load', initTheme);
         </script>
 	</body>
 </html>
