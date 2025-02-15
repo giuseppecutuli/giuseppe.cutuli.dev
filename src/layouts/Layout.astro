@@ -3,7 +3,7 @@ import 'normalize.css';
 import 'devicon/devicon.min.css';
 import '../styles/global.css';
 
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import { fade } from 'astro:transitions';
 
 import Header from '../components/Header.astro';
@@ -54,7 +54,7 @@ const { pageTitle, hideFooter = false, hideHeader = false } = Astro.props;
         {fontsPreloaad.map(font => <link rel="preload" {...font} />)}
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
-        <ViewTransitions />
+        <ClientRouter />
 	</head>
 	<body>
         {!hideHeader && <Header />}

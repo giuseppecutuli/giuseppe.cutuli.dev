@@ -11,8 +11,9 @@ This is my personal portfolio. After a year, I finally decided to create it, and
 /
 ├── public/
 │   └── fonts/
-│   └── lottie/
 ├── src/
+│   ├── assets/
+│       ├── images/
 │   ├── components/
 │   ├── layouts/
 │   └── pages/

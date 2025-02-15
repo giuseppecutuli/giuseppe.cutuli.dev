@@ -1,13 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Lottie from "../components/Lottie.astro";
 const allProjects = await Astro.glob('../pages/projects/*.md');
 const allContributions = await Astro.glob('../pages/contributions/*.md');
 const pageTitle = "Works";
 ---
 <Layout pageTitle={pageTitle}>
-    <Lottie src="/lottie/works.json" width="300" height="300" />
     <h2>Contributions</h2>
     <ul role="list" class="link-card-grid">
         {allContributions.map((card) => <Card 

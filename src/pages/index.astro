@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layout from '../layouts/Layout.astro';
-import Lottie from "../components/Lottie.astro";
+import profile from '../assets/images/cutuli_redbull.jpg';
 
 const technologies = [
     {
@@ -129,11 +131,21 @@ const technologies = [
 const pageTitle = "Giuseppe Cutuli - Full stack developer";
 ---
 <Layout pageTitle={pageTitle}>
-    <Lottie src="/lottie/home.json" width="300" height="211" />
+    <div class="profile">
+        <Image
+            class="profile-image"
+            src={profile}
+            alt="Cutuli Giuseppe"
+            widths={[300, 400]}
+            sizes={`(max-width: 360px) 300px, 400px`}
+        />
+    </div>
     <h1>Giuseppe Cutuli</h1>
     <small class="role">Full stack developer</small>
     <h2>About</h2>
     <p>
+        Hello 👋! I'm Giuseppe, a Full Stack Developer based in Catania, Italy.
+        <br />
         I love writing code. That's why I enjoy programming so much. I can create anything through code, from small utilities to large computer systems. This passion led me to become a Full Stack Developer.
         <br />
         I stumbled into this world literally for fun. At the age of 15, I tinkered with a few lines of code to make Metin2 servers work. From there, after finishing school, I started university in the Computer Science field.
@@ -162,10 +174,20 @@ const pageTitle = "Giuseppe Cutuli - Full stack developer";
     <h2>Work experience</h2>
     <ul>
         <li>
-            <h4>Senior Frontend Developer - <a href="https://thelevelgroup.com/" target="_blank" rel="noopener">The Level Group</a></h4>
-            <small>October 2023 - Present / Catania</small>
+            <h4>Backend Engineer - <a href="https://bizaway.com/en/" target="_blank" rel="noopener">BizAway</a></h4>
+            <small>December 2024 - Present / Full Remote</small>
             <p>
-                I am currently working as a Senior Frontend Developer at The Level Group, a company that deals with the creation of e-commerce sites for luxury brands.
+                I am currently working as a Backend Engineer at BizAway, a company that deals with the creation of a platform for the management of business trips.
+                I maintain and develop new micro services for new functionalities and to improve the internal product architecture.
+            </p>
+        </li>
+        <li>
+            <h4>Senior Frontend Developer - <a href="https://thelevelgroup.com/" target="_blank" rel="noopener">The Level Group</a></h4>
+            <small>October 2023 - November 2024 / Catania</small>
+            <p>
+                I worked as a Senior Frontend Developer at The Level Group, a company that deals with the creation of e-commerce sites for luxury brands.
+                I was responsible for maintaining and improving the frontend architecture, integrating different design patterns to increase the scalability of the internal framework.
+                I was in charge of the development of some of the most important e-commerce of fashion brands in the Italian environment, e.g. Roberto Cavalli, Ferrari.
             </p>
         </li>
         <li>
@@ -221,5 +243,16 @@ const pageTitle = "Giuseppe Cutuli - Full stack developer";
         display: block;
         margin-top: 0.3rem;
         text-align: center;
+    }
+
+    .profile {
+        text-align: center;
+    }
+
+    .profile-image {
+        max-width: 400px;
+        max-height: 400px;
+        object-fit: cover;
+        width: 100%;
     }
 </style>
